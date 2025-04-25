@@ -41,9 +41,9 @@ if st.button("Generate Letters"):
                             doc = DocxTemplate(template_file)
                             context = {
                                 'date': today_date,
-                                'name': row['Name'],
+                                'name': row['Name'].title(),
                                 'roll_no': row['Roll No'],
-                                'college': row['College Name'],
+                                'college': row['College Name'].title(),
                                 'position': row['Position'],
                                 'start_date': row['Start Date'].strftime("%d %B %Y"),
                                 'end_date': row['End Date'].strftime("%d %B %Y"),
@@ -61,14 +61,14 @@ if st.button("Generate Letters"):
                             doc = DocxTemplate(template_file)
                             context = {
                                 'date': today_date,
-                                'name': row['Name'],
+                                'name': row['Name'].title(),
                                 'roll_no': row['Roll No'],
-                                'college': row['College Name'],
-                                'city': row['City'],
+                                'college': row['College Name'].title(),
+                                'city': row['City'].title(),
                                 'postal_code': row['Postal Code'],
                                 'position': row['Position'],
                                 'field': row['Field'],
-                                'location': row['Location'],
+                                'location': row['Location'].title(),
                                 'start_date': row['Start Date'].strftime("%d %B %Y"),
                                 'end_date': row['End Date'].strftime("%d %B %Y"),
                             }
@@ -90,7 +90,7 @@ if st.button("Generate Letters"):
                                 'certificate_id': f"INT/VNR{base_id:03d}",
                                 'name': clean_name,
                                 'roll_no': row['Roll No'],
-                                'college_name': row['College Name'],
+                                'college_name': row['College Name'].title(),
                                 'college_location': row['College Location'].title(),
                                 'college_pincode': row['College Pincode'],
                                 'position': row['Position'].title(),
@@ -114,9 +114,9 @@ if st.button("Generate Letters"):
                             context = {
                                 'date': today_date,
                                 'certificate_id': certificate_id,
-                                'name': row['Name'],
+                                'name': row['Name'].title(),
                                 'roll_no': row['Roll No'],
-                                'college': row['College Name'],
+                                'college': row['College Name'].title(),
                                 'position': row['Position'],
                                 'start_date': row['Start Date'].strftime('%d %B %Y'),
                                 'end_date': row['End Date'].strftime('%d %B %Y'),
